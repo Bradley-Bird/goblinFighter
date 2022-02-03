@@ -20,6 +20,10 @@ export function renderEnemy(enemyStats) {
     enemyHp.textContent = 'hp:';
     enemyHpEl.textContent = enemyStats.hp < 0 ? 0 : enemyStats.hp;
 
+    if(enemyStats.hp <= 0) {
+        enemyEl.classList.add('dead')
+    }
+
     enemyIconEl.append(enemyIcon);
     enemyHp.append(enemyHpEl);
     enemyUl.append(enemyName, enemyIconEl, enemyHp);

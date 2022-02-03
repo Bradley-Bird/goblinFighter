@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { renderEnemy } from './utils';
+import { renderEnemy } from './utils.js';
 const form = document.getElementById('enemy-name-form');
 const countEl = document.getElementById('dead-enemy-count');
 const spawnEl = document.getElementById('spawner');
@@ -33,9 +33,23 @@ form.addEventListener('submit', (e) => {
     //add to enemy array
     enemies.push(newEnemy);
     console.log(newEnemy, enemies, 'check');
+    displayEnemy();
     //display--cant do till function is written
-  });   
+});
+function displayEnemy() {
+    enemyEl.textContent = '';
+    for (let enemy of enemies) {
+        const enemyCard = renderEnemy(enemy);
 
+        enemyCard.addEventListener('click', () => {
+            enemyClick(enemy);
+        });
+        enemyEl.append(enemyCard);
+    }
+}
+displayEnemy();
+
+function enemyClick() {}
 // get user input
 // use user input to update state
 // update DOM to reflect the new state

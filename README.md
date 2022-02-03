@@ -28,12 +28,11 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 --event listener for clicking add enemy
 -generate enemy id:name:hp:(Math.random)to put into enemies[]
 **ACP**
-**finished**
 
 --renderEnemy--PURE/TDD
--export function renderEnemy(enemyStats) {const enemyEl/iconEl/nameEl/hpEl 
--enemyEl.classlist.add('enemy') 
--nameEl.textContent = enemyStats.name 
+-export function renderEnemy(enemyStats) {const enemyEl/iconEl/nameEl/hpEl
+-enemyEl.classlist.add('enemy')
+-nameEl.textContent = enemyStats.name
 //
 -hpEl.id =`enemy-hp-${enemyStats.id}`
 -hpEl.textContent = enemyStat.hp <= 0 ? 0 : enemyStats.hp <--if less than or zero post zero otherwise update dynamically
@@ -46,17 +45,17 @@ enemyEl.append(nameEl,iconEl,hpEl)
 return enemyEL
 
 **ACP**
+**finished**
 -displayEnemy--IMPURE appends enemy data to enemy list.!!add dynamic event listener
 enemyListEL.textContent = '' reset the list to stop duplicates
 //then loop
 for(let enemy of enemies){
 //this is looping through and using the function we just made on each enemy in array
-const enemyEl =  renderEnemy(enemy);
+const enemyEl = renderEnemy(enemy);
 //here is where we add the dynamic eventListener
-enemyEl.addeventListener('click',  ()=>  {
- //this is the function we will write for the clicking of the newly rendered enemy element
-  enemyClickHandler(enemy)
-};)};
+enemyEl.addeventListener('click', ()=> {
+//this is the function we will write for the clicking of the newly rendered enemy element
+enemyClickHandler(enemy)
 
 **ACP/BREAK**
 --click handler function -
