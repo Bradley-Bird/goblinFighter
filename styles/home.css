@@ -64,3 +64,9 @@ section {
     background-repeat: no-repeat;
     background-position: center right;
 }
+.generic-enemy {
+    background-image: url(../assets/generic-enemy.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+}

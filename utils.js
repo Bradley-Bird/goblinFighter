@@ -8,7 +8,11 @@ export function renderEnemy(enemyStats) {
     const enemyHp = document.createElement('li');
     const enemyHpEl = document.createElement('span');
 
-    enemyEl.classList.add(`enemy-${enemyStats.id}`);
+    if (enemyStats.id < 3) {
+        enemyEl.classList.add(`enemy-${enemyStats.id}`);
+    } else {
+        enemyEl.classList.add('generic-enemy');
+    }
 
     enemyName.textContent = enemyStats.name;
     const alive = enemyStats.hp > 0 ? './assets/enemy-icon.png' : './assets/dead-icon.png';
@@ -20,8 +24,8 @@ export function renderEnemy(enemyStats) {
     enemyHp.textContent = 'hp:';
     enemyHpEl.textContent = enemyStats.hp < 0 ? 0 : enemyStats.hp;
 
-    if(enemyStats.hp <= 0) {
-        enemyEl.classList.add('dead')
+    if (enemyStats.hp <= 0) {
+        enemyEl.classList.add('dead');
     }
 
     enemyIconEl.append(enemyIcon);

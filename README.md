@@ -45,7 +45,6 @@ enemyEl.append(nameEl,iconEl,hpEl)
 return enemyEL
 
 **ACP**
-**finished**
 -displayEnemy--IMPURE appends enemy data to enemy list.!!add dynamic event listener
 enemyListEL.textContent = '' reset the list to stop duplicates
 //then loop
@@ -56,6 +55,7 @@ const enemyEl = renderEnemy(enemy);
 enemyEl.addeventListener('click', ()=> {
 //this is the function we will write for the clicking of the newly rendered enemy element
 enemyClickHandler(enemy)
+**finished**
 
 **ACP/BREAK**
 --click handler function -
