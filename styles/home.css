@@ -2,7 +2,6 @@
 
 .game {
     /* grid-template-columns: repeat(4, 1fr); */
-    display: grid;
     grid-template-columns: 1.1fr 0.9fr 1.1fr 0.9fr;
     grid-template-rows: 1fr 2.1fr 0.1fr;
     gap: 0px 0px;
@@ -12,25 +11,55 @@
         ". . . .";
 }
 
-    div {
-        height: 100px;
-        width: 100px;
-        background-color: blue;
-        margin: 10px;
-    }
+div {
+    display: flex;
+    height: 100px;
+    width: 300px;
+    background-color: blue;
+    margin: 10px;
+}
 
-    .dead-enemy-count {
-        grid-area: DEC;
-    }
+section {
+    display: flex;
+    overflow-wrap: break-word;
+    overflow: contain;
+}
 
-    .spawner {
-        grid-area: spawner;
-    }
+.dead-enemy-count {
+    grid-area: DEC;
+}
 
-    .hero {
-        grid-area: hero;
-    }
+.spawner {
+    grid-area: spawner;
+}
 
-    .enemy {
-        grid-area: enemy;
-    }
+.hero {
+    grid-area: hero;
+}
+
+.enemy {
+    grid-area: enemy;
+}
+
+.hero-img {
+    height: 200px;
+}
+
+.icon {
+    height: 25px;
+}
+
+.enemy-1 {
+    background-image: url(../assets/enemy-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+}
+
+.enemy-2 {
+    background-image: url(../assets/enemy-2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+}

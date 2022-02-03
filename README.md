@@ -10,11 +10,11 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 
 --add basic html
 **ImportantHTML**
---Player HP
---Two default enemies
---defeated enemy counter
---challenge enemy form with name creation input and submit button
---player icon div
+--Player HP--
+--Two default enemies--
+--defeated enemy counter--
+--challenge enemy form with name creation input and submit button--
+--player icon div--
 **ACP**
 
 --js
