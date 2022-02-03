@@ -16,14 +16,14 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 --challenge enemy form with name creation input and submit button--
 --player icon div--
 **ACP**
-
+**finished**
 --js
 **importantJS**
---get DOM elements
---set state
+--get DOM elements--
+--set state--
 -playerHP
 -defeated enemyHP
--default enemy[id: name: hp:]
+-default enemy[id: name: hp:]---
 **ACP/BREAK**
 
 --event listener for clicking add enemy

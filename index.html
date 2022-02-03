@@ -13,29 +13,38 @@
 </head>
 
 <body>
-<header>
-    <h1>DEFEAT THINE ENEMY!</h1>
-</header>
+    <header>
+        <h1>DEFEAT THINE ENEMY!</h1>
+    </header>
     <main class="game">
         <section class="dead-enemy-count">
-        <div><span>0: Enemies Defeated!</span></div>
+            <div>
+                <p><span id="dead-enemy-count">0</span>:Enemies Defeated!</p>
+            </div>
         </section>
         <section class="spawner">
-        <div><form>
-            <input type="text" name="enemy-name"/>
-            <button>Summon Opponent!</button>
-        </form></div>
-        </section> 
-        <section class="hero"> 
-        <div class="player-hp"><span>HIT POINTS:0</span></div>
-        <div class="hero-model"><img src="./assets/hero.png" class="hero-img"></div>
+            <div id=spawner>
+                <form>
+                    <input type="text" name="enemy-name" />
+                    <button>Summon Opponent!</button>
+                </form>
+            </div>
         </section>
-        <section class="enemy">
-            <div class="enemy-1"><ul>
-                <li>Sephiroth</li>
-                <li><img src="./assets/enemy-icon.png" class="icon"></li>
-                <li>hp:10000</li>
-            </ul></div>
+        <section class="hero">
+            <div class="player-hp">
+                <p>HIT POINTS:<span id="player-hp">0</span>
+                <p></p>
+            </div>
+            <div class="hero-model" id="hero-model"><img src="./assets/hero.png" class="hero-img"></div>
+        </section>
+        <section class="enemy" id="enemy">
+            <div class="enemy-1">
+                <ul>
+                    <li>Sephiroth</li>
+                    <li><img src="./assets/enemy-icon.png" class="icon"></li>
+                    <li>hp:10000</li>
+                </ul>
+            </div>
             <div class="enemy-2">
                 <ul>
                     <li>Cactuar</li>
@@ -43,7 +52,7 @@
                     <li>hp:1</li>
                 </ul>
             </div>
-          
+
         </section>
 
 
