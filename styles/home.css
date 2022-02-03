@@ -1,1 +1,36 @@
 /* add home page styles here */
+
+.game {
+    /* grid-template-columns: repeat(4, 1fr); */
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr 1.1fr 0.9fr;
+    grid-template-rows: 1fr 2.1fr 0.1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "DEC DEC spawner spawner"
+        "hero hero enemy enemy"
+        ". . . .";
+}
+
+    div {
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+        margin: 10px;
+    }
+
+    .dead-enemy-count {
+        grid-area: DEC;
+    }
+
+    .spawner {
+        grid-area: spawner;
+    }
+
+    .hero {
+        grid-area: hero;
+    }
+
+    .enemy {
+        grid-area: enemy;
+    }
