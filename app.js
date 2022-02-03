@@ -1,10 +1,12 @@
 // import functions and grab DOM elements
+import { renderEnemy } from './utils';
 const form = document.getElementById('enemy-name-form');
 const countEl = document.getElementById('dead-enemy-count');
 const spawnEl = document.getElementById('spawner');
 const playerHpEl = document.getElementById('player-hp');
 const heroModelEl = document.getElementById('hero-model');
 const enemyEl = document.getElementById('enemy');
+const enemyIcon = document.getElementById('icon');
 // let state
 let deadEnemyCount = 0;
 let playerHP = 10;
@@ -32,7 +34,8 @@ form.addEventListener('submit', (e) => {
     enemies.push(newEnemy);
     console.log(newEnemy, enemies, 'check');
     //display--cant do till function is written
-});
+  });   
+
 // get user input
 // use user input to update state
 // update DOM to reflect the new state

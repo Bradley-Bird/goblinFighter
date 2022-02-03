@@ -16,7 +16,6 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 --challenge enemy form with name creation input and submit button--
 --player icon div--
 **ACP**
-**finished**
 --js
 **importantJS**
 --get DOM elements--
@@ -29,6 +28,7 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 --event listener for clicking add enemy
 -generate enemy id:name:hp:(Math.random)to put into enemies[]
 **ACP**
+**finished**
 
 --renderEnemy--PURE/TDD
 -export function renderEnemy(enemyStats) {const enemyEl/iconEl/nameEl/hpEl 
