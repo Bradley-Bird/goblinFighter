@@ -55,10 +55,10 @@ const enemyEl = renderEnemy(enemy);
 enemyEl.addeventListener('click', ()=> {
 //this is the function we will write for the clicking of the newly rendered enemy element
 enemyClickHandler(enemy)
-**finished**
 
 **ACP/BREAK**
 --click handler function -
+**finished**
 
 ## Making a plan
 

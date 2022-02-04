@@ -39,7 +39,12 @@ function displayEnemy() {
     enemyEl.textContent = '';
     for (let enemy of enemies) {
         const enemyCard = renderEnemy(enemy);
-
+        enemyCard.addEventListener('mousedown', () => {
+            heroModelEl.classList.add('hero-img-attack');
+        });
+        enemyCard.addEventListener('mouseup', () => {
+            heroModelEl.classList.remove('hero-img-attack');
+        });
         enemyCard.addEventListener('click', () => {
             enemyClick(enemy);
         });
@@ -53,23 +58,24 @@ function enemyClick(enemy) {
     if (enemy.hp < 0) return;
     const playerHit = Math.ceil(Math.random() * 10);
     const enemyHit = Math.ceil(Math.random() * 10);
-    console.log('click', playerHit);
+    // alert('click', playerHit);
     if (playerHit > 5) {
-        console.log(`You hit ${enemy.name}!`);
+        alert(`You hit ${enemy.name}!`);
         enemy.hp--;
     } else {
-        console.log('Miss!');
+        alert('Miss!');
     }
 
     if (enemyHit > 4) {
-        console.log(`You've been hit!`);
+        alert(`You've been hit!`);
         playerHP--;
     } else {
-        console.log('Miss!', enemyHit);
+        alert('Miss!', enemyHit);
     }
     playerHpEl.textContent = playerHP;
-    if (playerHP === 0) {
-        alert('You have died!');
-    }
+
     displayEnemy();
+    if (playerHP === 0) {
+        alert('you have died');
+    }
 }
