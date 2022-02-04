@@ -49,7 +49,8 @@ function displayEnemy() {
 displayEnemy();
 
 function enemyClick(enemy) {
-    if (enemy.hp === 0) return;
+    if (enemy.hp === 0) deadEnemyCount++, (countEl.textContent = deadEnemyCount);
+    if (enemy.hp < 0) return;
     const playerHit = Math.ceil(Math.random() * 10);
     const enemyHit = Math.ceil(Math.random() * 10);
     console.log('click', playerHit);
@@ -65,6 +66,10 @@ function enemyClick(enemy) {
         playerHP--;
     } else {
         console.log('Miss!', enemyHit);
+    }
+    playerHpEl.textContent = playerHP;
+    if (playerHP === 0) {
+        alert('You have died!');
     }
     displayEnemy();
 }
