@@ -5,6 +5,7 @@ const countEl = document.getElementById('dead-enemy-count');
 const playerHpEl = document.getElementById('player-hp');
 const heroModelEl = document.getElementById('hero-model');
 const enemyEl = document.getElementById('enemy');
+const modalEL = document.querySelector('.modal-el');
 
 // let state
 let deadEnemyCount = 0;
@@ -39,14 +40,17 @@ function displayEnemy() {
     enemyEl.textContent = '';
     for (let enemy of enemies) {
         const enemyCard = renderEnemy(enemy);
-        enemyCard.addEventListener('mousedown', () => {
-            heroModelEl.classList.add('hero-img-attack');
-        });
-        enemyCard.addEventListener('mouseup', () => {
-            heroModelEl.classList.remove('hero-img-attack');
-        });
+
         enemyCard.addEventListener('click', () => {
             enemyClick(enemy);
+            heroModelEl.classList.add('hero-img-attack');
+            modalEL.classList.add('el-active');
+            setTimeout(() => {
+                heroModelEl.classList.remove('hero-img-attack');
+            }, 500);
+            setTimeout(() => {
+                modalEL.classList.remove('el-active');
+            }, 1500);
         });
         enemyEl.append(enemyCard);
     }
@@ -57,25 +61,27 @@ function enemyClick(enemy) {
     if (enemy.hp <= 0) return;
     const playerHit = Math.ceil(Math.random() * 10);
     const enemyHit = Math.ceil(Math.random() * 10);
+    const playerMsg = document.getElementById('player-message');
+    const enemyMsg = document.getElementById('enemy-message');
     // alert('click', playerHit);
     if (playerHit > 5) {
-        alert(`You hit ${enemy.name}!`);
+        playerMsg.textContent = `You hit ${enemy.name}!`;
         enemy.hp--;
     } else {
-        alert('Miss!');
+        playerMsg.textContent = `You missed ${enemy.name}!`;
     }
     if (enemy.hp === 0) deadEnemyCount++, (countEl.textContent = deadEnemyCount);
 
     if (enemyHit > 4) {
-        alert(`You've been hit!`);
+        enemyMsg.textContent = `${enemy.name} has hit you!`;
         playerHP--;
     } else {
-        alert('Miss!', enemyHit);
+        enemyMsg.textContent = `${enemy.name} missed!`;
     }
     playerHpEl.textContent = playerHP;
 
     displayEnemy();
     if (playerHP === 0) {
-        alert('you have died');
+        console.log('you have died');
     }
 }
