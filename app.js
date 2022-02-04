@@ -42,15 +42,15 @@ function displayEnemy() {
         const enemyCard = renderEnemy(enemy);
 
         enemyCard.addEventListener('click', () => {
+            if (enemy.hp > 0) heroModelEl.classList.add('hero-img-attack');
+            if (enemy.hp > 0) modalEL.classList.add('el-active');
             enemyClick(enemy);
-            heroModelEl.classList.add('hero-img-attack');
-            modalEL.classList.add('el-active');
             setTimeout(() => {
                 heroModelEl.classList.remove('hero-img-attack');
             }, 500);
             setTimeout(() => {
                 modalEL.classList.remove('el-active');
-            }, 1500);
+            }, 1200);
         });
         enemyEl.append(enemyCard);
     }
@@ -81,7 +81,7 @@ function enemyClick(enemy) {
     playerHpEl.textContent = playerHP;
 
     displayEnemy();
-    if (playerHP === 0) {
-        console.log('you have died');
-    }
+    // if (playerHP === 0) {
+    //     console.log('you have died');
+    // }
 }
