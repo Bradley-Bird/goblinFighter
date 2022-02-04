@@ -2,11 +2,10 @@
 import { renderEnemy } from './utils.js';
 const form = document.getElementById('enemy-name-form');
 const countEl = document.getElementById('dead-enemy-count');
-const spawnEl = document.getElementById('spawner');
 const playerHpEl = document.getElementById('player-hp');
 const heroModelEl = document.getElementById('hero-model');
 const enemyEl = document.getElementById('enemy');
-const enemyIcon = document.getElementById('icon');
+
 // let state
 let deadEnemyCount = 0;
 let playerHP = 10;
@@ -32,7 +31,7 @@ form.addEventListener('submit', (e) => {
     };
     //add to enemy array
     enemies.push(newEnemy);
-    console.log(newEnemy, enemies, 'check');
+    // console.log(newEnemy, enemies, 'check');
     displayEnemy();
     //display--cant do till function is written
 });
@@ -49,7 +48,23 @@ function displayEnemy() {
 }
 displayEnemy();
 
-function enemyClick() {}
-// get user input
-// use user input to update state
-// update DOM to reflect the new state
+function enemyClick(enemy) {
+    if (enemy.hp === 0) return;
+    const playerHit = Math.ceil(Math.random() * 10);
+    const enemyHit = Math.ceil(Math.random() * 10);
+    console.log('click', playerHit);
+    if (playerHit > 5) {
+        console.log(`You hit ${enemy.name}!`);
+        enemy.hp--;
+    } else {
+        console.log('Miss!');
+    }
+
+    if (enemyHit > 4) {
+        console.log(`You've been hit!`);
+        playerHP--;
+    } else {
+        console.log('Miss!', enemyHit);
+    }
+    displayEnemy();
+}

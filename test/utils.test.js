@@ -5,7 +5,7 @@ const test = QUnit.test;
 test('should return div with enemy li', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<div class="enemy-1"><ul><li>Sephiroth</li><li><img src="./assets/enemy-icon.png" class="icon"></li><li>hp:<span>10000</span></li></ul></div>`;
+    const expected = `<div class="enemy-1"><ul><li>Sephiroth</li><li><img src="./assets/enemy-icon.png" class="icon"></li><li>hp:<span id="enemy-hp-1">10000</span></li></ul></div>`;
 
     //Act
     // Call the function you're testing and set the result to a const
@@ -13,7 +13,7 @@ test('should return div with enemy li', (expect) => {
         name: 'Sephiroth',
         id: '1',
         hp: 10000,
-    })
+    });
 
     //Expect
     // Make assertions about what is expected versus the actual result

@@ -20,7 +20,7 @@ export function renderEnemy(enemyStats) {
 
     enemyIcon.classList.add('icon');
     //make id to grab in the event handler
-    // enemyHp.id = `enemy-hp-${enemyStats.id}`;
+    enemyHpEl.id = `enemy-hp-${enemyStats.id}`;
     enemyHp.textContent = 'hp:';
     enemyHpEl.textContent = enemyStats.hp < 0 ? 0 : enemyStats.hp;
 
