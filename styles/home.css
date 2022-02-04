@@ -92,17 +92,35 @@ section {
     transition: visibility 0s opacity 0.5s;
 }
 
+
 .el-active {
     visibility: visible;
     opacity: 1;
 }
 
 .modal {
-    background-color: white;
-    width: 30%;
-    height: 30%;
+    width: 20rem;
+    height: 20rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    contain: content;
+    flex-wrap: wrap;
+    text-justify: top;
+    text-align: top;
+}
+
+.fight {
+    background: url(../assets/hit.gif);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+.game-over {
+    background: url(../assets/player-hit.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
