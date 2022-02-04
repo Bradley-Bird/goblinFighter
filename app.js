@@ -6,6 +6,8 @@ const playerHpEl = document.getElementById('player-hp');
 const heroModelEl = document.getElementById('hero-model');
 const enemyEl = document.getElementById('enemy');
 const modalEL = document.querySelector('.modal-el');
+const gameOver = document.querySelector('.game-over-modal');
+const reset = document.getElementById('reset');
 
 // let state
 let deadEnemyCount = 0;
@@ -51,10 +53,14 @@ function displayEnemy() {
             setTimeout(() => {
                 modalEL.classList.remove('el-active');
             }, 1200);
+            checkGameStatus();
         });
         enemyEl.append(enemyCard);
     }
 }
+reset.addEventListener('click', () => {
+    window.location.reload();
+});
 displayEnemy();
 
 function enemyClick(enemy) {
@@ -81,7 +87,11 @@ function enemyClick(enemy) {
     playerHpEl.textContent = playerHP;
 
     displayEnemy();
-    // if (playerHP === 0) {
-    //     console.log('you have died');
-    // }
+    if (playerHP === 0) {
+        console.log('you have died');
+    }
+}
+
+function checkGameStatus() {
+    if (playerHP <= 0) gameOver.classList.add('el-active');
 }
