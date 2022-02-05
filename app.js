@@ -11,7 +11,7 @@ const reset = document.getElementById('reset');
 
 // let state
 let deadEnemyCount = 0;
-let playerHP = 0;
+let playerHP = 10;
 let enemies = [
     { id: 1, name: 'Sephiroth', hp: 10000 },
     { id: 2, name: 'Cactaur', hp: 1 },
