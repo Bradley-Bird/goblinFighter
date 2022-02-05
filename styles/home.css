@@ -1,1 +1,187 @@
 /* add home page styles here */
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.game {
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: 1.1fr 0.9fr 1.1fr 0.9fr;
+    grid-template-rows: 1fr 2.1fr 0.1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "DEC DEC spawner spawner"
+        "hero hero enemy enemy"
+        ". . . .";
+    background: url(../assets/background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+div {
+    display: flex;
+    height: 5rem;
+    width: 100%;
+    background-color: blue;
+    margin: 10px;
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+section {
+    display: flex;
+    contain: content;
+    margin-left: 1em;
+}
+
+section::before {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    z-index: -1;
+}
+
+.dead-enemy-count {
+    grid-area: DEC;
+}
+
+.spawner {
+    grid-area: spawner;
+}
+
+.hero {
+    grid-area: hero;
+
+}
+
+.enemy {
+    grid-area: enemy;
+}
+
+.hero-img {
+    height: 10rem;
+}
+
+.hero-img-attack {
+    margin-left: 3rem;
+}
+
+.icon {
+    height: 25px;
+}
+
+
+.enemy-1 {
+    background-image: url(../assets/enemy-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+}
+
+.enemy-2 {
+    background-image: url(../assets/enemy-2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.generic-enemy {
+    background-image: url(../assets/generic-enemy.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.modal-el, .game-over-modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s opacity 0.5s;
+}
+
+
+.el-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal, .modal-game-over {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    contain: content;
+}
+
+.fight {
+    z-index: 0;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.fight::before {
+    background: url(../assets/hit.gif);
+    background-attachment: fill;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: .5;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    z-index: -1;
+}
+
+.game-over {
+    z-index: 0;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.game-over::before {
+    background: url(../assets/player-hit.gif);
+    background-attachment: fill;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: .5;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    z-index: -1;
+}
+
+.end-game-screen {
+    background: url(../assets/deadBackground.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
