@@ -1,6 +1,8 @@
 /* add home page styles here */
 
-
+/* body{
+    background-image: url(../);
+} */
 .game {
     /* grid-template-columns: repeat(4, 1fr); */
     grid-template-columns: 1.1fr 0.9fr 1.1fr 0.9fr;
@@ -10,11 +12,16 @@
         "DEC DEC spawner spawner"
         "hero hero enemy enemy"
         ". . . .";
+    background: url(../assets/background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 div {
     display: flex;
-    height: 100px;
+    height: 5rem;
     width: 100%;
     background-color: blue;
     margin: 10px;
@@ -22,8 +29,20 @@ div {
 
 section {
     display: flex;
-    overflow-wrap: break-word;
     contain: content;
+    margin-left: 1em;
+}
+
+section::before {
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    z-index: -1;
 }
 
 .dead-enemy-count {
@@ -36,6 +55,7 @@ section {
 
 .hero {
     grid-area: hero;
+
 }
 
 .enemy {
@@ -98,7 +118,7 @@ section {
     opacity: 1;
 }
 
-.modal {
+.modal, .modal-game-over {
     width: 20rem;
     height: 20rem;
     display: flex;
@@ -106,21 +126,58 @@ section {
     align-items: center;
     flex-direction: column;
     contain: content;
-    flex-wrap: wrap;
-    text-justify: top;
-    text-align: top;
 }
 
 .fight {
+    z-index: 0;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.fight::before {
     background: url(../assets/hit.gif);
-    
-    background-size: contain;
+    background-attachment: fill;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-blend-mode: overlay;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: .5;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    z-index: -1;
 }
 
 .game-over {
+    z-index: 0;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.game-over::before {
     background: url(../assets/player-hit.gif);
-    background-size: contain;
+    background-attachment: fill;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: .5;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    z-index: -1;
+}
+
+.end-game-screen {
+    background: url(../assets/deadBackground.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }

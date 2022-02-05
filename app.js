@@ -11,7 +11,7 @@ const reset = document.getElementById('reset');
 
 // let state
 let deadEnemyCount = 0;
-let playerHP = 10;
+let playerHP = 0;
 let enemies = [
     { id: 1, name: 'Sephiroth', hp: 10000 },
     { id: 2, name: 'Cactaur', hp: 1 },
@@ -87,11 +87,8 @@ function enemyClick(enemy) {
     playerHpEl.textContent = playerHP;
 
     displayEnemy();
-    if (playerHP === 0) {
-        console.log('you have died');
-    }
 }
 
 function checkGameStatus() {
-    if (playerHP <= 0) gameOver.classList.add('el-active');
+    if (playerHP <= 0) gameOver.classList.add('el-active', 'end-game-screen');
 }
