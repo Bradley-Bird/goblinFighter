@@ -1,8 +1,10 @@
 /* add home page styles here */
 
-/* body{
-    background-image: url(../);
-} */
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
 .game {
     /* grid-template-columns: repeat(4, 1fr); */
     grid-template-columns: 1.1fr 0.9fr 1.1fr 0.9fr;
@@ -25,6 +27,8 @@ div {
     width: 100%;
     background-color: blue;
     margin: 10px;
+    color: antiquewhite;
+    font-weight: bold;
 }
 
 section {
